@@ -1,0 +1,192 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+a[href^='http'] {
+  padding-right: 1.25em;
+}
+
+a[href^='http']::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.25em;
+  background-size: 100%;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWV4dGVybmFsLWxpbmsiPjxwYXRoIGQ9Ik0xNSAzaDZ2NiIvPjxwYXRoIGQ9Ik0xMCAxNCAyMSAzIi8+PHBhdGggZD0iTTE4IDEzdjZhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWOGEyIDIgMCAwIDEgMi0yaDYiLz48L3N2Zz4=');
+}
+
+*:active,
+*:focus,
+*:focus-within,
+*:focus-visible {
+  outline: none;
+}
+
+@media print {
+  body {
+    margin: 1rem;
+    line-break: anywhere;
+    word-break: break-word;
+    page-break-inside: avoid;
+    hyphens: auto;
+  }
+
+  * {
+    color: black;
+    background-color: white;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  form,
+  input,
+  button,
+  textarea,
+  select,
+  option,
+  #sidebar,
+  .sidebar,
+  header,
+  footer {
+    display: none;
+  }
+
+  body *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    font-size: 12px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+}
+
+@media print and (color: 0) {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    filter: grayscale(100%);
+  }
+}
+
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    overflow-x: auto;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.00ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media screen and (prefers-contrast: more) {
+  html {
+    filter: invert(100%) saturate(180%);
+  }
+}
+
+@media screen and (prefers-contrast: less) {
+  html {
+    filter: grayscale(100%);
+  }
+}
+
+@media screen and (forced-colors: active) {
+  *:focus {
+    outline-color: transparent;
+  }
+
+  input,
+  textarea,
+  button,
+  select,
+  option,
+  section {
+    border: 1px solid transparent !important;
+  }
+
+  svg {
+    stroke: CanvasText !important;
+    fill: Canvas !important;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  white-space: pre-wrap;
+}
+
+.prose ol {
+  counter-reset: c;
+}
+
+.prose ol li {
+  counter-increment: c;
+}
+
+.prose ol li::before {
+  content: counter(c) ". ";
+}
